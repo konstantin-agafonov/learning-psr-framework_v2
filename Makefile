@@ -1,4 +1,4 @@
-init: docker-down-clear docker-pull docker-build-pull docker-up
+init: docker-down-clear docker-pull docker-build-pull docker-up app-init
 
 down: docker-down-clear
 
