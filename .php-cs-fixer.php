@@ -1,7 +1,7 @@
 <?php
 
 return (new PhpCsFixer\Config())
-    ->getCacheFile(__DIR__ . '/var/php_cs.cache')
+    ->setCacheFile(__DIR__ . '/var/php_cs.cache')
     ->setFinder(
         PhpCsFixer\Finder::create()
             ->in([
@@ -10,7 +10,7 @@ return (new PhpCsFixer\Config())
                 __DIR__ . '/tests',
             ])
             ->append([
-                __FILE__
+                __FILE__,
             ])
     )
     ->setRules([
@@ -36,5 +36,9 @@ return (new PhpCsFixer\Config())
         'php_unit_fqcn_annotation' => true,
         'php_unit_set_up_tear_down_visibility' => true,
         'php_unit_test_case_static_method_calls' => ['call_type' => 'self'],
-
+        'final_class' => true,
+        'final_public_method_for_abstract_class' => true,
+        'self_static_accessor' => true,
+        'static_lambda' => true,
+        'global_namespace_import' => true,
     ]);
